@@ -1,0 +1,295 @@
+/* ============================================================
+   EV Review PDF — 新能源纯电购车评测专用设计系统 v1.0
+   风格：现代汽车研究机构 + 科技产品报告 + 高端编辑设计
+   用法：生成报告时把本文件内联进 <style>（Chrome headless 打印）
+   品牌色：深蓝(理性/专业) + 橙(决策/强调)；双车色：钛7橙 / G7蓝
+   ============================================================ */
+
+:root {
+  /* 色彩：深蓝 = 理性/专业，橙 = 决策/强调 */
+  --bg: #f6f7fa;
+  --navy: #14213d;
+  --navy-deep: #101b31;
+  --navy-2: #1d2b47;
+  --navy-3: #27395e;
+  --orange: #e8542f;
+  --orange-soft: #fde4da;
+  --gold: #f2a03d;
+  --text: #1d2533;
+  --text2: #5c6675;
+  --text3: #8a93a5;
+  --border: #e8ebf0;
+  --white: #ffffff;
+  --carA: #e8542f;   /* 车A 钛7 */
+  --carB: #1e9fff;   /* 车B G7 */
+  --carA-soft: #fde4da;
+  --carB-soft: #dcecff;
+  --grey: #5a6577;
+  --danger: #b3352c;
+  --ok: #2e7d4f;
+  --warn: #b8860b;
+
+  /* Typography 梯度 */
+  --t-display: 26pt; --t-h1: 19pt; --t-h2: 13pt; --t-h3: 11pt;
+  --t-body: 9.5pt; --t-caption: 8.5pt; --t-foot: 7.5pt;
+
+  /* Spacing 4/8/12/16/24/32/48/64 */
+  --s0: 4px; --s1: 8px; --s2: 12px; --s3: 16px;
+  --s4: 24px; --s5: 32px; --s6: 48px; --s7: 64px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif; color: var(--text); font-size: var(--t-body); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+/* ---- 页面框架（A4 竖版） ---- */
+.page { width: 210mm; min-height: 297mm; padding: 14mm 15mm 12mm; background: var(--bg); page-break-after: always; position: relative; overflow: hidden; }
+.page:last-child { page-break-after: auto; }
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--s3); }
+.brand { font-size: 10.5pt; font-weight: 800; letter-spacing: .5px; color: var(--navy); }
+.brand b { color: var(--orange); font-weight: 800; }
+.section-tag { font-size: 8pt; color: var(--text3); letter-spacing: 2px; }
+.rule { height: 2.5px; background: var(--navy); border-radius: 2px; margin: 0 0 var(--s3); }
+.rule.orange { background: var(--orange); }
+.footer { position: absolute; bottom: 6mm; left: 15mm; right: 15mm; font-size: var(--t-foot); color: #a4adbc; display: flex; justify-content: space-between; }
+
+/* ---- 标题层级 ---- */
+.h1 { font-size: var(--t-h1); font-weight: 900; letter-spacing: .3px; color: var(--navy); }
+.h1 small { font-size: 9.5pt; color: var(--text3); font-weight: 500; }
+.h2 { font-size: var(--t-h2); font-weight: 800; color: var(--navy); margin: var(--s4) 0 var(--s2); display: flex; align-items: center; gap: var(--s1); }
+.h2 .no { display: inline-flex; width: 6.5mm; height: 6.5mm; background: var(--navy); color: #fff; border-radius: 2mm; align-items: center; justify-content: center; font-size: 8.5pt; }
+.h3 { font-size: var(--t-h3); font-weight: 800; color: var(--navy); margin: var(--s2) 0 var(--s1); }
+.sub { font-size: 9.5pt; color: var(--text2); margin-top: var(--s1); line-height: 1.7; }
+.lead { font-size: 10.5pt; color: var(--text2); line-height: 1.7; }
+
+/* ============================================================
+   P1 · Evaluation Framework — 评价体系总览页
+   ============================================================ */
+
+/* 顶部标题区 */
+.m-header { text-align: center; padding: 2mm 4mm 5mm; }
+.m-kicker { font-size: 8pt; letter-spacing: 4px; color: var(--orange); font-weight: 800; }
+.m-title { font-size: 21pt; font-weight: 900; color: var(--navy); margin-top: 1.5mm; letter-spacing: .5px; }
+.m-sub { font-size: 9.5pt; color: var(--text2); margin-top: 2mm; line-height: 1.7; }
+
+/* 九宫格卡片：图标 + 编号 + 名称 + 关键词 */
+.m-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.2mm; margin: 4mm 0; }
+.m-card { background: var(--white); border: 1px solid var(--border); border-radius: 2.5mm; padding: 3.4mm 3mm 3mm; position: relative; overflow: hidden; }
+.m-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1.6mm; background: var(--navy); }
+.m-card .ico { font-size: 12pt; line-height: 1; }
+.m-card .num { position: absolute; top: 3mm; right: 3mm; font-size: 12pt; font-weight: 900; color: #dfe4ec; }
+.m-card .nm { font-size: 10.5pt; font-weight: 800; color: var(--navy); margin-top: 1.6mm; }
+.m-card .kw { font-size: 7.8pt; color: var(--text3); margin-top: 1.1mm; line-height: 1.55; }
+.m-card .core { font-size: 7.5pt; color: #aab3c2; margin-top: 0.8mm; }
+
+/* 底部四层决策横条 */
+.m-flow { display: flex; align-items: stretch; gap: 2mm; margin: 4mm 0 2mm; }
+.m-step { flex: 1; background: var(--navy); color: #fff; border-radius: 2.5mm; padding: 3mm 2.6mm; text-align: center; }
+.m-step .n { font-size: 7pt; letter-spacing: 1.5px; color: #9fb0cd; font-weight: 700; }
+.m-step .t { font-size: 10pt; font-weight: 800; margin-top: 0.8mm; }
+.m-step .d { font-size: 7.5pt; color: #c3cfe2; margin-top: 0.8mm; line-height: 1.5; }
+.m-arrow { display: flex; align-items: center; font-size: 11pt; font-weight: 900; color: var(--orange); }
+
+/* FINAL DECISION 带 */
+.m-final { background: linear-gradient(135deg, var(--navy-deep), var(--navy-2) 65%, var(--navy-3)); border-radius: 3mm; padding: 3.4mm 4mm 3.2mm; text-align: center; }
+.m-final .k { font-size: 7.5pt; letter-spacing: 3px; color: var(--gold); font-weight: 800; }
+.m-final .v { font-size: 13pt; font-weight: 900; color: #fff; margin-top: 1.2mm; letter-spacing: 2px; }
+.m-final .v em { font-style: normal; color: var(--orange); }
+
+/* P1 底部证据小字 */
+.m-evline { font-size: 7.8pt; color: var(--text3); text-align: center; margin-top: 3mm; }
+
+/* ============================================================
+   P2 · Vehicle Hero — 车型概览 / 双车 Hero
+   ============================================================ */
+.verdict { background: linear-gradient(135deg, var(--navy-deep), var(--navy-2) 60%, var(--navy-3)); color: #fff; border-radius: 3.5mm; padding: 4.2mm 5mm; margin-bottom: var(--s3); }
+.verdict .tag { font-size: 7.5pt; letter-spacing: 2px; color: var(--gold); font-weight: 700; }
+.verdict .txt { font-size: 11pt; font-weight: 800; line-height: 1.7; margin-top: 1.2mm; }
+.verdict .txt .hlA { color: #ff9d6c; } .verdict .txt .hlB { color: #7ecbff; }
+
+.vehicle { border-radius: 3.5mm; overflow: hidden; background: var(--white); box-shadow: 0 1px 4px rgba(16,27,49,.08); display: flex; flex-direction: column; }
+.vehicle .head { padding: 3.6mm 4mm 3.2mm; color: #fff; }
+.vehicle .head .ck { font-size: 6.8pt; letter-spacing: 2.5px; opacity: .8; font-weight: 600; }
+.vehicle .head .nm { font-size: 13pt; font-weight: 900; margin-top: 1mm; }
+.vehicle .head .ver { font-size: 8.5pt; opacity: .92; margin-top: .6mm; }
+.vehicle .head .pr { font-size: 16pt; font-weight: 900; margin-top: 1.4mm; }
+.vehicle .body { padding: 3.2mm 4mm 3.4mm; font-size: 8.2pt; color: var(--text2); line-height: 1.75; }
+.vehicle .body b { color: var(--navy); }
+.headA { background: linear-gradient(135deg, #c23e1f, var(--orange)); }
+.headB { background: linear-gradient(135deg, #1173c4, var(--carB)); }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; }
+
+/* 车型身份条（参数总览） */
+.spec-row { display: flex; justify-content: space-between; padding: 2.2mm 0; border-bottom: 1px solid var(--border); font-size: 8.5pt; }
+.spec-row:last-child { border-bottom: none; }
+.spec-row .k { color: var(--text3); }
+.spec-row .v { font-weight: 700; color: var(--navy); text-align: right; }
+
+/* ============================================================
+   P3+ · Score Comparison — 九维评分对比（Index & Detail）
+   ============================================================ */
+.dim { background: var(--white); border: 1px solid var(--border); border-radius: 2.8mm; padding: 2.7mm 3.6mm; margin-bottom: 2.2mm; }
+.dim-head { display: flex; align-items: center; gap: 2mm; }
+.dim-no { display: inline-flex; width: 6mm; height: 6mm; align-items: center; justify-content: center; background: var(--navy); color: #fff; border-radius: 1.8mm; font-size: 8pt; font-weight: 800; flex: none; }
+.dim-name { font-size: 10.5pt; font-weight: 800; color: var(--navy); }
+.dim-tags { font-size: 7.5pt; color: var(--text3); margin-left: 1mm; }
+.dim-score { margin-left: auto; display: flex; gap: 1.4mm; align-items: center; }
+.sc { font-size: 9.5pt; font-weight: 900; color: #fff; padding: 1mm 2.2mm; border-radius: 1.7mm; }
+.scA { background: var(--carA); } .scB { background: var(--carB); } .scT { background: var(--grey); }
+.win-tag { font-size: 7.5pt; font-weight: 700; color: #fff; padding: 0.9mm 2mm; border-radius: 6mm; white-space: nowrap; }
+.winA { background: var(--carA); } .winB { background: var(--carB); } .winT { background: var(--grey); }
+
+/* Score Bar（双色对称） */
+.sb-row { display: flex; align-items: center; gap: 2mm; margin: 1.3mm 0 0.5mm; }
+.sb-row.mini { margin: 1.0mm 0 0.4mm; }
+.sb-row.mini .sb-track { height: 2.6mm; }
+.sb-row.mini .sb-val { font-size: 7.5pt; }
+.sb-label { width: 8mm; font-size: 7.5pt; color: var(--text3); flex: none; }
+.sb-track { flex: 1; height: 3.4mm; background: #eef0f5; border-radius: 2mm; position: relative; }
+.sb-fill { position: absolute; top: 0; bottom: 0; border-radius: 2mm; }
+.sb-fill.left { left: 0; background: var(--carA); }
+.sb-fill.right { right: 0; background: var(--carB); }
+.sb-val { width: 9mm; font-size: 8pt; font-weight: 800; color: var(--navy); flex: none; text-align: right; }
+
+/* 置信度 / 状态徽章 */
+.conf-tag { display: inline-block; font-size: 7pt; padding: 0.8mm 1.8mm; border-radius: 5mm; font-weight: 700; }
+.conf-high { background: #e3f2e8; color: var(--ok); }
+.conf-mid { background: #fff3e0; color: var(--warn); }
+.conf-low { background: #fceceb; color: var(--danger); }
+.status-tag { display: inline-block; font-size: 7pt; padding: 0.8mm 1.8mm; border-radius: 5mm; font-weight: 700; }
+.st-confirmed { background: #e3f2e8; color: var(--ok); }
+.st-estimated { background: #fff3e0; color: var(--warn); }
+.st-insufficient { background: #fceceb; color: var(--danger); }
+
+.dim-note { font-size: 8.3pt; color: var(--text2); line-height: 1.7; margin-top: 1.2mm; }
+.dim-note b { color: var(--navy); }
+.dim-unc { font-size: 7.5pt; color: var(--text3); margin-top: 1mm; line-height: 1.5; }
+
+/* 九维汇总横幅 */
+.summary-strip { display: flex; gap: 2.5mm; margin: 3mm 0; }
+.summary-strip .item { flex: 1; background: var(--white); border: 1px solid var(--border); border-radius: 2.5mm; padding: 2.8mm 3mm; text-align: center; }
+.summary-strip .k { font-size: 7.5pt; color: var(--text3); }
+.summary-strip .v { font-size: 12pt; font-weight: 900; color: var(--navy); margin-top: 1mm; }
+.summary-strip .s { font-size: 7.2pt; color: var(--text3); margin-top: 0.8mm; }
+
+/* ============================================================
+   Price Analysis — 价格分析（指导价→落地阶梯）
+   ============================================================ */
+.price-flow { background: var(--white); border: 1px solid var(--border); border-radius: 3mm; overflow: hidden; }
+.pf-row { display: flex; align-items: center; padding: 2.6mm 3.6mm; border-bottom: 1px solid var(--border); font-size: 8.8pt; }
+.pf-row:last-child { border-bottom: none; }
+.pf-row .lbl { width: 30%; color: var(--text2); }
+.pf-row .val { width: 34%; font-weight: 800; color: var(--navy); }
+.pf-row .sign { width: 8%; text-align: center; color: var(--text3); }
+.pf-row.total { background: var(--navy); }
+.pf-row.total .lbl, .pf-row.total .val { color: #fff; }
+.pf-row.total .val { color: var(--gold); font-size: 10pt; }
+.pf-row.neg { background: #f4f8f4; }
+.pf-row.neg .val { color: var(--ok); }
+
+/* 价格差横幅 */
+.gap-banner { display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, var(--navy-deep), var(--navy-2)); border-radius: 3mm; padding: 3.8mm 5mm; margin: 3mm 0; }
+.gap-banner .k { font-size: 8pt; color: #9fb0cd; letter-spacing: 1px; }
+.gap-banner .num { font-size: 19pt; font-weight: 900; color: var(--gold); }
+.gap-banner .d { font-size: 8pt; color: #c3cfe2; margin-top: 1mm; }
+
+/* ============================================================
+   TCO — 持有成本（Stacked Bar）
+   ============================================================ */
+.tco-block { background: var(--white); border: 1px solid var(--border); border-radius: 3mm; padding: 3.6mm 4mm; }
+.tco-title { font-size: 10pt; font-weight: 800; color: var(--navy); margin-bottom: 3mm; }
+.tco-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.tco-col .h { font-size: 8.5pt; font-weight: 800; color: var(--text2); margin-bottom: 1.6mm; }
+.stack { display: flex; height: 9mm; border-radius: 2mm; overflow: hidden; }
+.stack .seg { display: flex; align-items: center; justify-content: center; font-size: 6.8pt; color: #fff; font-weight: 700; }
+.tco-legend { display: flex; flex-wrap: wrap; gap: 1.6mm 3mm; margin-top: 2mm; font-size: 7.5pt; color: var(--text2); }
+.tco-legend .dot { display: inline-block; width: 2.6mm; height: 2.6mm; border-radius: 1mm; margin-right: 1mm; vertical-align: -0.5mm; }
+.tco-total { margin-top: 3mm; font-size: 9pt; color: var(--text2); }
+.tco-total b { color: var(--navy); font-size: 10.5pt; }
+
+/* ============================================================
+   Premium Analysis — 溢价对决
+   ============================================================ */
+.prem-row { display: flex; align-items: center; gap: 2.5mm; padding: 2.8mm 3.6mm; border-bottom: 1px solid var(--border); background: var(--white); }
+.prem-row:last-child { border-bottom: none; }
+.prem-nm { width: 22%; font-size: 9pt; font-weight: 800; color: var(--navy); }
+.prem-verdict { width: 16%; }
+.prem-note { flex: 1; font-size: 8.3pt; color: var(--text2); line-height: 1.65; }
+.vd-value { display: inline-block; font-size: 7.5pt; font-weight: 800; color: #fff; padding: 1mm 2mm; border-radius: 1.7mm; }
+.vd-true { background: var(--ok); }
+.vd-mid { background: var(--warn); }
+.vd-flip { background: var(--grey); }
+
+/* ============================================================
+   Scenario Decision — 场景矩阵
+   ============================================================ */
+.scene { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6mm; }
+.sc { background: var(--white); border: 1px solid var(--border); border-radius: 2.6mm; padding: 3mm 3.4mm; display: flex; justify-content: space-between; align-items: center; gap: 2mm; }
+.sc .n { font-size: 9.5pt; font-weight: 700; color: var(--navy); }
+.sc .d { font-size: 7.8pt; color: var(--text3); margin-top: 0.8mm; line-height: 1.5; }
+.pill { font-size: 8pt; font-weight: 800; padding: 1.3mm 2.6mm; border-radius: 6mm; color: #fff; white-space: nowrap; }
+
+/* ============================================================
+   Final Verdict — 最终推荐
+   ============================================================ */
+.final { background: linear-gradient(135deg, var(--navy-deep), var(--navy-2) 60%, var(--navy-3)); color: #fff; border-radius: 4mm; padding: 5.5mm 6mm; margin-bottom: var(--s3); }
+.final .k { font-size: 8pt; letter-spacing: 3px; color: var(--gold); font-weight: 800; }
+.final .v { font-size: 17pt; font-weight: 900; margin-top: 1.6mm; letter-spacing: .5px; }
+.final .why { font-size: 8.8pt; color: #c3cfe2; margin-top: 2.5mm; line-height: 1.8; }
+.final .why b { color: #fff; }
+.final .alt { margin-top: 3mm; border-top: 1px solid rgba(255,255,255,.18); padding-top: 2.6mm; font-size: 8.5pt; color: #9fb0cd; line-height: 1.8; }
+.final .alt b { color: #ff9d6c; }
+
+.winners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.6mm; }
+.w { background: var(--white); border: 1px solid var(--border); border-radius: 2.6mm; padding: 3mm 3.2mm; }
+.w .k { font-size: 7.5pt; color: var(--text3); }
+.w .v { font-size: 10.5pt; font-weight: 900; margin-top: 1mm; }
+.w .v.a { color: var(--carA); } .w .v.b { color: var(--carB); } .w .v.t { color: var(--grey); }
+
+/* ============================================================
+   Evidence — 证据与数据质量
+   ============================================================ */
+.ev-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 3mm; overflow: hidden; }
+.ev-table th { background: var(--navy); color: #fff; font-size: 8.5pt; padding: 2.8mm 3mm; text-align: left; font-weight: 700; }
+.ev-table td { padding: 2.4mm 3mm; font-size: 8.3pt; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; }
+.ev-table tr:last-child td { border-bottom: none; }
+.ev-table td.k { color: var(--text3); width: 24%; font-size: 8pt; }
+.ev-lvl { display: inline-block; font-family: Menlo, Consolas, monospace; font-size: 7.5pt; font-weight: 800; padding: 0.8mm 1.8mm; border-radius: 1.5mm; }
+.ev-s { background: var(--navy); color: #fff; }
+.ev-a { background: #dde8f5; color: #1d4d7d; }
+.ev-b { background: #eef1f6; color: var(--text2); }
+.ev-c { background: #f7f7f9; color: var(--text3); }
+
+/* 风险提示（安全底线触发） */
+.risk-box { border-left: 3mm solid var(--danger); background: #fdf3f2; border-radius: 2mm; padding: 3mm 3.6mm; margin: 3mm 0; }
+.risk-box .t { font-size: 9.5pt; font-weight: 800; color: var(--danger); }
+.risk-box .d { font-size: 8.3pt; color: #7c3f3a; line-height: 1.7; margin-top: 1mm; }
+
+/* 通用小件 */
+.note-box { background: #fff7e8; border: 1px solid #f2d9a8; border-radius: 2.5mm; padding: 3mm 3.6mm; font-size: 8.3pt; color: #8a6523; line-height: 1.7; margin: 3mm 0; }
+.badge-line { display: flex; gap: 2mm; flex-wrap: wrap; margin: 2.5mm 0; }
+.badge { font-size: 7.5pt; padding: 1mm 2.2mm; background: #eef1f6; border-radius: 2mm; color: #56606f; }
+.pull-quote { border-left: 3px solid var(--orange); padding: 2.6mm 3.4mm; font-size: 10.5pt; font-weight: 700; color: var(--navy); margin: 3mm 0; line-height: 1.6; }
+
+/* 表格（通用极简） */
+table.t { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 3mm; overflow: hidden; }
+table.t th { background: var(--navy); color: #fff; font-size: 8.5pt; padding: 2.8mm 3mm; text-align: left; font-weight: 700; }
+table.t td { padding: 2.4mm 3mm; font-size: 8.3pt; border-bottom: 1px solid var(--border); vertical-align: top; }
+table.t tr:last-child td { border-bottom: none; }
+table.t td.k { color: var(--text3); width: 22%; font-size: 8pt; }
+table.t td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* 大数字 KPI */
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+.kpi { background: var(--white); border: 1px solid var(--border); border-radius: 2.6mm; padding: 3.2mm 3mm; text-align: center; }
+.kpi .num { font-size: 17pt; font-weight: 900; color: var(--navy); }
+.kpi .num.o { color: var(--orange); }
+.kpi .label { font-size: 7.8pt; color: var(--text3); margin-top: 1mm; }
+
+/* 页面分隔（章节节奏页） */
+.divider-page { display: flex; flex-direction: column; justify-content: center; min-height: 297mm; }
+.divider-page .no { font-size: 44pt; font-weight: 900; color: var(--orange); opacity: .92; }
+.divider-page .title { font-size: var(--t-display); font-weight: 900; color: var(--navy); margin-top: var(--s2); }
+.divider-page .desc { font-size: 10pt; color: var(--text2); margin-top: var(--s1); max-width: 62%; line-height: 1.7; }
+
+/* 图片位 */
+.img-band { border-radius: 3mm; overflow: hidden; background: #e8ebf0; display: flex; align-items: center; justify-content: center; color: var(--text3); font-size: 8pt; }

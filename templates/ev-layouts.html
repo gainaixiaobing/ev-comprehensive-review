@@ -1,0 +1,239 @@
+<!-- ============================================================
+   EV Review PDF — Layout Library v1.0（新能源纯电专用，11 种布局）
+   用法：生成报告时按“固定报告结构”选对应骨架，复制结构、填内容。
+   CSS 依赖：templates/ev-review-design.css（内联进 <style>）
+   ============================================================ -->
+
+<!-- ============ L01 · Evaluation Framework（P1 必用，固定方法论品牌页） ============ -->
+<!-- 硬性：无车型名/无参数/无权重/无来源等级；3秒懂9维，10秒懂四层逻辑 -->
+<div class="page">
+  <div class="topbar"><div class="brand">DAIYUE <b>·</b> 汽车决策研究室</div><div class="section-tag">EVALUATION FRAMEWORK</div></div>
+  <div class="rule orange"></div>
+
+  <!-- 顶部 ~20% -->
+  <div class="m-header">
+    <div class="m-kicker">HOW WE JUDGE</div>
+    <div class="m-title">我们如何评价一辆新能源纯电车？</div>
+    <div class="m-sub">不只看参数，而是从 9 个维度判断真实产品力，再结合价格与使用场景，回答唯一的问题：<br>这辆车，值不值得选？</div>
+  </div>
+
+  <!-- 中部 ~65%：3×3 九宫格；每卡 = 图标+编号+名称+3~5关键词 -->
+  <div class="m-grid">
+    <div class="m-card"><div class="ico">⚡</div><div class="num">01</div><div class="nm">能源效率</div><div class="kw">能耗 · 续航 · 低温 · 补能</div></div>
+    <div class="m-card"><div class="ico">🔋</div><div class="num">02</div><div class="nm">三电 &amp; 充电</div><div class="kw">电池 · 电机 · 电控 · 快充</div></div>
+    <div class="m-card"><div class="ico">🛞</div><div class="num">03</div><div class="nm">底盘 &amp; 驾驶</div><div class="kw">悬架 · 转向 · 制动 · 操控</div></div>
+    <div class="m-card"><div class="ico">🛡️</div><div class="num">04</div><div class="nm">安全 &amp; 车身</div><div class="kw">主被动安全 · 结构 · 碰撞</div></div>
+    <div class="m-card"><div class="ico">🤖</div><div class="num">05</div><div class="nm">智能驾驶</div><div class="kw">硬件 · 感知 · 功能 · 稳定</div></div>
+    <div class="m-card"><div class="ico">🖥️</div><div class="num">06</div><div class="nm">智能座舱</div><div class="kw">芯片 · 车机 · 语音 · 交互</div></div>
+    <div class="m-card"><div class="ico">🎨</div><div class="num">07</div><div class="nm">设计 &amp; 体验</div><div class="kw">空间 · 座椅 · 舒适 · 细节</div></div>
+    <div class="m-card"><div class="ico">⚙️</div><div class="num">08</div><div class="nm">整车工程</div><div class="kw">NVH · 做工 · 完整度</div></div>
+    <div class="m-card"><div class="ico">🕐</div><div class="num">09</div><div class="nm">长期可靠性</div><div class="kw">故障率 · 衰减 · 耐久 · 风险</div></div>
+  </div>
+
+  <!-- 底部 ~15%：四层决策横条 + FINAL DECISION -->
+  <div class="m-flow">
+    <div class="m-step"><div class="n">01 · 产品力</div><div class="t">车本身怎么样</div><div class="d">9 个维度</div></div>
+    <div class="m-arrow">→</div>
+    <div class="m-step"><div class="n">02 · 购买价值</div><div class="t">价格值不值</div><div class="d">价格 · 权益 · TCO</div></div>
+    <div class="m-arrow">→</div>
+    <div class="m-step"><div class="n">03 · 场景适配</div><div class="t">适不适合你</div><div class="d">城市 · 长途 · 家庭 · 冰雪</div></div>
+    <div class="m-arrow">→</div>
+    <div class="m-step"><div class="n">04 · 最终决策</div><div class="t">到底买不买</div><div class="d">推荐 · 观望 · 不推荐</div></div>
+  </div>
+  <div class="m-final">
+    <div class="k">FINAL DECISION</div>
+    <div class="v">买 <em>/</em> 等 <em>/</em> 不建议买</div>
+  </div>
+  <div class="m-evline">所有关键数据绑定：车型 / 年款 / 版本 / 动力 / 中国市场</div>
+</div>
+
+<!-- ============ L02 · Vehicle Hero（P2 车型概览；双车=双 Hero） ============ -->
+<div class="page">
+  <div class="topbar"><div class="brand">DAIYUE <b>·</b> 汽车决策研究室</div><div class="section-tag">02 / 车型概览</div></div>
+  <div class="rule"></div>
+  <div class="verdict"><div class="tag">一句话结论</div><div class="txt">核心结论……（<span class="hlB">B 默认推荐</span> / <span class="hlA">A 反选条件</span>）</div></div>
+  <div class="duo">
+    <div class="vehicle"><div class="head headA"><div class="ck">A · 品牌 车型</div><div class="nm">版本名</div><div class="ver">年款 · 动力形式</div><div class="pr">¥xx.xx 万</div></div>
+      <div class="body">动力 / 电池 / 续航 / 平台 / 底盘 / 安全 / 智驾 / 座舱 / 空间……（每行一条核心点）</div></div>
+    <div class="vehicle"><div class="head headB"><div class="ck">B · 品牌 车型</div><div class="nm">版本名</div><div class="ver">年款 · 动力形式</div><div class="pr">¥xx.xx 万</div></div>
+      <div class="body">同上</div></div>
+  </div>
+  <div class="note-box" style="margin-top:4mm;">⚠️ 可比性声明（非同级别时的比较基础）</div>
+  <div class="footer"><span>车型概览</span><span>02</span></div>
+</div>
+
+<!-- ============ L03 · 9-Dimension Analysis + L04 · Score Comparison（P3+ 九维） ============ -->
+<!-- 每维一块：编号+名称+双分数徽章+胜者徽章 → Score Bar → 一句话原因 → 置信度/不确定性 -->
+<div class="page">
+  <div class="topbar"><div class="brand">DAIYUE <b>·</b> 汽车决策研究室</div><div class="section-tag">03 / 九维产品力</div></div>
+  <div class="rule"></div>
+  <div class="h1">九维产品力对比 <small>（A 钛7 ｜ B G7）</small></div>
+
+  <div class="dim">
+    <div class="dim-head"><div class="dim-no">01</div><div class="dim-name">能源效率</div><div class="dim-tags">能耗 · 续航</div>
+      <div class="dim-score"><span class="sc scA">A 7.5</span><span class="sc scB">B 8.5</span><span class="win-tag winB">B 领先</span></div></div>
+    <div class="sb-row"><div class="sb-label">A</div><div class="sb-track"><div class="sb-fill left" style="width:75%;"></div></div><div class="sb-val">7.5</div></div>
+    <div class="sb-row"><div class="sb-label">B</div><div class="sb-track"><div class="sb-fill right" style="width:85%;"></div></div><div class="sb-val">8.5</div></div>
+    <div class="dim-note">一句话关键原因：更低能耗 + 更高效率（证据 [A]）</div>
+    <div class="dim-unc">置信度 <span class="conf-tag conf-mid">中</span> ｜ 区间 8.0–9.0 ｜ 最大不确定性：冬季高速实测样本</div>
+  </div>
+  <!-- …重复 02–09，可 3-4 维/页 -->
+
+  <div class="summary-strip">
+    <div class="item"><div class="k">A 产品力</div><div class="v">≈80</div><div class="s">区间 78–82 ｜ 置信度中</div></div>
+    <div class="item"><div class="k">B 产品力</div><div class="v">≈82</div><div class="s">区间 80–84 ｜ 置信度中</div></div>
+    <div class="item"><div class="k">胜者</div><div class="v" style="color:var(--carB);">B 微胜</div><div class="s">区间重叠 → 实质平手偏 B</div></div>
+  </div>
+  <div class="footer"><span>九维产品力</span><span>03</span></div>
+</div>
+
+<!-- ============ L05 · Price Analysis（价格阶梯：指导价→落地） ============ -->
+<div class="page">
+  <div class="topbar"><div class="brand">DAIYUE <b>·</b> 汽车决策研究室</div><div class="section-tag">04 / 当前购买价值</div></div>
+  <div class="rule"></div>
+  <div class="h1">当前购买价值 <small>（2026 年 9 月 · 中国市场）</small></div>
+
+  <div class="price-flow">
+    <div class="pf-row"><div class="lbl">官方指导价</div><div class="val">¥239,800</div><div class="sign"></div><div class="lbl">官方指导价</div><div class="val">¥205,800</div></div>
+    <div class="pf-row neg"><div class="lbl">现金优惠</div><div class="val">− ¥6,000</div><div class="sign">−</div><div class="lbl">购车补贴</div><div class="val">− ¥8,000</div></div>
+    <div class="pf-row neg"><div class="lbl">金融贴息/0息</div><div class="val">− ¥11,300</div><div class="sign">−</div><div class="lbl">置换补贴</div><div class="val">− ¥10,000</div></div>
+    <div class="pf-row"><div class="lbl">置换补贴</div><div class="val">− ¥6,000</div><div class="sign">−</div><div class="lbl">购置税+保险</div><div class="val">+ ¥17,100</div></div>
+    <div class="pf-row total"><div class="lbl">实际落地（A）</div><div class="val">≈ ¥24.6–25.2 万</div><div class="sign"></div><div class="lbl">实际落地（B）</div><div class="val">≈ ¥21.0–21.9 万</div></div>
+  </div>
+
+  <div class="gap-banner">
+    <div><div class="k">实际价格差</div><div class="d">B 比 A 便宜（含权益）</div></div>
+    <div class="num">≈ ¥34,000</div>
+  </div>
+  <div class="note-box">⚠️ 权益时效：…（价格查询时间戳 + 未确认项）</div>
+  <div class="footer"><span>当前购买价值</span><span>04</span></div>
+</div>
+
+<!-- ============ L06 · TCO（Stacked Bar 图表化） ============ -->
+<div class="page">
+  <div class="topbar"><div class="brand">DAIYUE <b>·</b> 汽车决策研究室</div><div class="section-tag">05 / 长期持有价值</div></div>
+  <div class="rule"></div>
+  <div class="h1">长期持有 · TCO <small>（3 年 / 5 年，三情景取基准）</small></div>
+
+  <div class="tco-block">
+    <div class="tco-title">3 年总拥有成本构成（估算）</div>
+    <div class="tco-cols">
+      <div class="tco-col"><div class="h">A · 钛7 ≈ ¥16 万</div>
+        <div class="stack"><div class="seg" style="width:66%;background:var(--navy);">购车 10.4</div><div class="seg" style="width:8%;background:var(--carA);">电 1.3</div><div class="seg" style="width:12%;background:var(--gold);">保 2.0</div><div class="seg" style="width:14%;background:var(--grey);">残值 2.3</div></div></div>
+      <div class="tco-col"><div class="h">B · G7 ≈ ¥13 万</div>
+        <div class="stack"><div class="seg" style="width:71%;background:var(--navy);">购车 9.2</div><div class="seg" style="width:5%;background:var(--carB);">电 0.7</div><div class="seg" style="width:10%;background:var(--gold);">保 1.3</div><div class="seg" style="width:14%;background:var(--grey);">残值 1.8</div></div></div>
+    </div>
+    <div class="tco-legend">
+      <span><i class="dot" style="background:var(--navy);"></i>购车+税+险</span>
+      <span><i class="dot" style="background:var(--carA);"></i>电费</span>
+      <span><i class="dot" style="background:var(--gold);"></i>保养/维修/轮胎</span>
+      <span><i class="dot" style="background:var(--grey);"></i>残值（回收）</span>
+    </div>
+    <div class="tco-total">TCO 差：<b>B 3 年约省 2.5–3.5 万</b>（电费 + 购车价差主导）</div>
+  </div>
+  <div class="note-box">⚠️ 残值为 <b>模型估算</b>：两车上市 &lt;16 个月，「保值率暂无法充分验证」；±5% 残值 → TCO 波动 ±1 万。（三情景：乐观/基准/保守）</div>
+  <div class="footer"><span>长期持有价值</span><span>05</span></div>
+</div>
+
+<!-- ============ L07 · Premium Analysis（溢价对决：多花的钱买到了什么） ============ -->
+<div class="page">
+  <div class="topbar"><div class="brand">DAIYUE <b>·</b> 汽车决策研究室</div><div class="section-tag">06 / 溢价分析</div></div>
+  <div class="rule"></div>
+  <div class="h1">多花的钱，到底买到了什么？</div>
+  <div class="gap-banner"><div><div class="k">A 比 B 贵</div><div class="d">一笔一笔拆开看</div></div><div class="num">¥34,000</div></div>
+
+  <div class="prem-row"><div class="prem-nm">四驱 515kW</div><div class="prem-verdict"><span class="vd-value vd-true">有价值</span></div><div class="prem-note">动力 +236%，冰雪/脱困/拖挂；但日常单电机够用</div></div>
+  <div class="prem-row"><div class="prem-nm">通过性</div><div class="prem-verdict"><span class="vd-value vd-true">有价值</span></div><div class="prem-note">方盒子+12 地形+高底盘：露营/烂路/北方雪地</div></div>
+  <div class="prem-row"><div class="prem-nm">安全实测</div><div class="prem-verdict"><span class="vd-value vd-true">最有价值</span></div><div class="prem-note">C-IASI 全优实测 vs 无公开成绩</div></div>
+  <div class="prem-row"><div class="prem-nm">电池 +25kWh</div><div class="prem-verdict"><span class="vd-value vd-mid">价值有限</span></div><div class="prem-note">续航反而更短（大电池≠更长续航）</div></div>
+  <div class="prem-row"><div class="prem-nm">智驾/座舱</div><div class="prem-verdict"><span class="vd-value vd-flip">反向下</span></div><div class="prem-note">G7 这两项领先，买高配反而买不到优势</div></div>
+
+  <div class="pull-quote">结论：3.4 万主要买到「四驱 + 通过性 + 安全实测背书」；若不需要四驱与越野，这笔钱的价值有限。</div>
+  <div class="footer"><span>溢价分析</span><span>06</span></div>
+</div>
+
+<!-- ============ L08 · Scenario Decision（场景矩阵） ============ -->
+<div class="page">
+  <div class="topbar"><div class="brand">DAIYUE <b>·</b> 汽车决策研究室</div><div class="section-tag">07 / 场景适配</div></div>
+  <div class="rule"></div>
+  <div class="h1">不同使用场景，谁更合适？</div>
+  <p class="sub">以下为通用场景评价；用户画像未知时只给场景矩阵，不代表对具体个人的购买建议。</p>
+
+  <div class="scene">
+    <div class="sc"><div><div class="n">城市通勤</div><div class="d">低电耗 · 座舱舒适 · 智驾丝滑</div></div><span class="pill" style="background:var(--carB);">B 胜</span></div>
+    <div class="sc"><div><div class="n">冬季/冰雪</div><div class="d">四驱 + 高底盘 + 地形模式</div></div><span class="pill" style="background:var(--carA);">A 胜</span></div>
+    <div class="sc"><div><div class="n">高速长途</div><div class="d">真实续航 + 补能速度</div></div><span class="pill" style="background:var(--carB);">B 胜</span></div>
+    <div class="sc"><div><div class="n">露营/烂路</div><div class="d">通过性 · 前备箱 · 外放电</div></div><span class="pill" style="background:var(--carA);">A 胜</span></div>
+    <div class="sc"><div><div class="n">家庭多人</div><div class="d">后台配置各有胜负</div></div><span class="pill" style="background:var(--grey);">视需求</span></div>
+    <div class="sc"><div><div class="n">计划持有 5 年+</div><div class="d">双方长期数据均不足</div></div><span class="pill" style="background:var(--grey);">暂无法判断</span></div>
+  </div>
+  <div class="footer"><span>场景适配</span><span>07</span></div>
+</div>
+
+<!-- ============ L09 · Final Verdict（默认推荐 + 反选条件） ============ -->
+<div class="page">
+  <div class="topbar"><div class="brand">DAIYUE <b>·</b> 汽车决策研究室</div><div class="section-tag">08 / 最终购车决策</div></div>
+  <div class="rule"></div>
+  <div class="h1">最终购车决策</div>
+
+  <div class="winners">
+    <div class="w"><div class="k">产品力</div><div class="v b">B 微胜</div></div>
+    <div class="w"><div class="k">价格竞争力</div><div class="v b">B 胜</div></div>
+    <div class="w"><div class="k">长期持有</div><div class="v b">B 微胜</div></div>
+    <div class="w"><div class="k">城市使用</div><div class="v b">B</div></div>
+    <div class="w"><div class="k">冰雪/复杂</div><div class="v a">A</div></div>
+    <div class="w"><div class="k">智能化</div><div class="v b">B</div></div>
+  </div>
+
+  <div class="final">
+    <div class="k">FINAL VERDICT</div>
+    <div class="v">看需求 · 默认推荐 B</div>
+    <div class="why">因为：<b>B 更便宜 3.4 万 · 能耗更低 · 智驾更强 · 座舱更好</b></div>
+    <div class="alt"><b>什么时候选 A？</b> 四驱刚需 · 冬季冰雪 · 露营烂路 · 更看重安全实测（C-IASI 全优）</div>
+  </div>
+
+  <table class="t" style="margin-top:4mm;">
+    <tr><th>如果你是这样的人</th><th>建议</th><th>为什么</th></tr>
+    <tr><td class="k">南方城市通勤 · 家充 · 小家庭</td><td><b style="color:var(--carB);">买 B</b></td><td>更省更聪明，省下的钱补齐选装</td></tr>
+    <tr><td class="k">北方冬季 · 常跑山路/露营</td><td><b style="color:var(--carA);">买 A</b></td><td>四驱 + 通过性 + 安全实测</td></tr>
+    <tr><td class="k">预算卡死 21 万以内</td><td>B</td><td>唯一答案</td></tr>
+  </table>
+  <div class="footer"><span>最终购车决策</span><span>08</span></div>
+</div>
+
+<!-- ============ L10 · Evidence（证据与数据质量） ============ -->
+<div class="page">
+  <div class="topbar"><div class="brand">DAIYUE <b>·</b> 汽车决策研究室</div><div class="section-tag">09 / 证据与数据质量</div></div>
+  <div class="rule"></div>
+  <div class="h1">证据与数据质量</div>
+  <p class="sub">证据等级：<b>[S] 官方</b>｜<b>[A] 独立测试</b>｜<b>[B] 专业媒体/大规模用户</b>｜<b>[C] 单用户/社交</b>。关键数据绑定车型/年款/版本/市场。</p>
+
+  <table class="ev-table">
+    <tr><th style="width:13%;">等级</th><th>关键数据</th><th style="width:46%;">说明与状态</th></tr>
+    <tr><td><span class="ev-lvl ev-s">[S]</span></td><td class="k">钛7 C-IASI 全优</td><td>中国本土实测 · 四维 G+ · <span class="status-tag st-confirmed">已确认</span></td></tr>
+    <tr><td><span class="ev-lvl ev-a">[A]</span></td><td class="k">钛7 实测能耗</td><td>755 版数据 · 同平台参考 · <span class="status-tag st-estimated">参考数据</span></td></tr>
+    <tr><td><span class="ev-lvl ev-s">[S]</span></td><td class="k">G7 安全性能</td><td>仅“按 C-NCAP 2024 五星开发”· 无公开成绩 · <span class="status-tag st-insufficient">证据不足</span></td></tr>
+    <tr><td><span class="ev-lvl ev-b">[B]</span></td><td class="k">残值率</td><td>两车上市 &lt;16 个月 · <span class="status-tag st-estimated">模型估算</span></td></tr>
+  </table>
+
+  <div class="h2"><span class="no">✓</span>Data Quality Audit</div>
+  <div class="badge-line">
+    <span class="badge">无版本混用</span><span class="badge">无跨市场混用</span><span class="badge">无“宣传=实测”冒充</span><span class="badge">无绝对排名用语</span>
+  </div>
+  <div class="note-box"><b>数据质量：中等偏上</b>。主要缺口：①… ②… ③… ｜ 结论基于 <b>2026-09-04</b> 信息，若关键证据变化需修正。</div>
+  <div class="footer"><span>证据与数据质量 · 报告结束</span><span>09</span></div>
+</div>
+
+<!-- ============ L11 · Appendix（附录：方法/权重/免责声明） ============ -->
+<div class="page">
+  <div class="topbar"><div class="brand">DAIYUE <b>·</b> 汽车决策研究室</div><div class="section-tag">APPENDIX</div></div>
+  <div class="rule"></div>
+  <div class="h1">附录 · 方法说明</div>
+  <div class="sub">
+    评分权重：能源效率 15% · 三电与补能 20% · 底盘与驾驶 15% · 安全与车身 15% · 智能驾驶 10% · 智能座舱 7.5% · 设计与用户体验 7.5% · 整车工程 5% · 长期可靠性 5%（合计 100%）。<br>
+    评分语义：9.0–10 同级标杆 ｜ 7.0–8.9 主流优秀 ｜ 5.0–6.9 及格有短板 ｜ &lt;5.0 明显缺陷。<br>
+    ⚠️ 安全为底线指标：重大证据缺口将触发风险提示，不被加权平均覆盖。<br>
+    免责声明：本报告基于公开信息与 2026-09-04 查询结果，价格、权益与政策可能随时变化；购买前请以官方最新信息为准。
+  </div>
+  <div class="footer"><span>附录 · 报告结束</span><span>附录</span></div>
+</div>
