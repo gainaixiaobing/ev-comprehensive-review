@@ -87,6 +87,32 @@ cp -r SKILL.md templates scripts references ~/.hermes/skills/automotive/ev-compr
 
 将按统一规范生成购车评测 PDF：**P1 评价体系 → 车型概览 → 9 维产品力 → 价格 → TCO → 场景 → 最终决策 → 证据**。
 
+### 通用 Agent 安装（Claude Code / Codex / Cursor / Gemini CLI…）
+
+本仓库同时遵循开放的 [Agent Skills](https://agentskills.io) 标准（`SKILL.md` 格式）：同一份技能文件可直接用于 **Claude Code、Codex、Cursor、Gemini CLI、VS Code Copilot** 等主流工具。完整技能包见 [`skills/ev-comprehensive-review/`](skills/ev-comprehensive-review/)。
+
+```bash
+# Claude Code（个人技能目录）
+mkdir -p ~/.claude/skills
+cp -r skills/ev-comprehensive-review ~/.claude/skills/
+
+# Codex（CLI / IDE / App；用户级目录）
+mkdir -p ~/.agents/skills
+cp -r skills/ev-comprehensive-review ~/.agents/skills/
+
+# Hermes
+mkdir -p ~/.hermes/skills/automotive
+cp -r skills/ev-comprehensive-review ~/.hermes/skills/automotive/
+
+# 或使用软链接（跟随仓库更新；Codex 官方支持符号链接）
+ln -s "$(pwd)/skills/ev-comprehensive-review" ~/.agents/skills/ev-comprehensive-review
+```
+
+- 触发方式：各工具均按技能 `description` 自动匹配触发；Codex 中也可输入 `/skills` 选择调用。安装后 Codex 会自动发现，如未出现请重启 Codex。
+- 其他支持 `SKILL.md` 标准的工具：把 `skills/ev-comprehensive-review/` 整个文件夹放进该工具的技能目录即可（项目级使用可放入仓库的 `.agents/skills/` 或 `.claude/skills/`）。
+
+> 说明：仓库根目录的 `SKILL.md` 为早期融合版（V3.1 + PDF 生成）；[`skills/ev-comprehensive-review/`](skills/ev-comprehensive-review/) 为最新独立技能包（V3.2）。本节各命令安装的是后者。
+
 ### 手动按体系分析
 
 按 SKILL.md 中的流程执行：确认车型（五重绑定）→ 参数表 → 9 维评分（每维：分数+区间+置信度+最大不确定性）→ 短板/隐藏优势 → 反证 → 价格/优惠/售后 → TCO → 竞品锚点 → 最终结论（五档：推荐购买/有条件推荐/不推荐/建议等待/暂不建议）。

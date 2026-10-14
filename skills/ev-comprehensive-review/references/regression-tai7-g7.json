@@ -1,0 +1,66 @@
+{
+  "regression_case": "方程豹钛7 EV 675KM 四驱闪充版 vs 小鹏G7 2026款 702 Max 旗舰版",
+  "query_date": "2026-09-04",
+  "scope": "中国市场新能源纯电乘用车购车评测",
+  "comparability_note": "两车不完全同级（钛7中大型方盒子SUV 4999x1995x1865/轴距2920；G7中型运动SUV 4892x1925x1655/轴距2890）。本次以价格接近+家庭实用场景接近为比较基础。",
+  "vehicles": {
+    "A": {
+      "name": "方程豹 钛7", "version": "EV 675KM 四驱闪充版", "year": "2026款",
+      "price": 23.98, "unit": "万元", "powertrain": "双电机四驱 515kW / 4.5s",
+      "battery": "105.7kWh 磷酸铁锂（二代刀片）", "range_cltc": 675,
+      "platform": "800V 兆瓦闪充；10->70% 5min，10->97% 9min；自有闪充站 5500+",
+      "chassis": "前双叉臂+后五连杆；云辇C+预瞄",
+      "safety": "C-IASI 四维全优（含电池托底）[S] 已确认",
+      "adss": "天神之眼B 激光版（城区+高速领航）",
+      "cockpit": "DiLink 7屏、26寸W-HUD、20扬声、冷暖冰箱",
+      "space": "得房率70.9%、乘员舱3.3m、201L前备箱、二排放倒1880L",
+      "warranty": "整车6年/15万km、三电终身",
+      "efficiency": {"official": 13.9, "tested": 17.22, "tested_note": "755版实测（同平台参考数据），四驱版只会更高 [A][参考]"},
+      "promo_2026_09": "3年0息 或 1.13万贴息（二选一）；置换至高6000；12个月免费闪充（9/30前）[已确认]",
+      "landed_cost": "24.6-25.2万（含购置税1.06万+保险0.65万）",
+      "scores": {"efficiency": 7.5, "powertrain": 8.5, "chassis": 8.0, "safety": 9.0, "adss": 7.0, "cockpit": 7.0, "design": 8.0, "engineering": 7.5, "reliability": 8.0}
+    },
+    "B": {
+      "name": "小鹏 G7", "version": "702 Max 旗舰版", "year": "2026款",
+      "price": 20.58, "unit": "万元", "powertrain": "单电机后驱 218kW / 6.5s",
+      "battery": "80.8kWh 磷酸铁锂（液冷无热蔓延包）", "range_cltc": 702,
+      "platform": "800V SiC；5C电池（峰值451kW宣传）；10-80% 12min",
+      "chassis": "双叉臂+五连杆；DCC智能可变阻尼+太极液压衬套+AI底盘（200m预瞄）",
+      "safety": "按C-NCAP 2024五星标准开发，无公开成绩 [证据不足]",
+      "adss": "XNGP 城区+高速 标配免费；图灵1颗750TOPS+本地VLA/VLM；第二代VLA需+1.2万升级包",
+      "cockpit": "8295P+图灵双芯、87寸AR-HUD、20扬7.1.4、四座通风加热按摩、副驾零重力、后排8寸屏、RNC降噪",
+      "space": "后备箱819L、扩展2277L、得房率88%",
+      "warranty": "电池组8年/16万km（整车待确认）",
+      "efficiency": {"official": 13.2, "tested": "13-15", "tested_note": "37℃实测达成705km（2025款同平台参考）[B][参考]"},
+      "promo_2026_09": "8月口径：至高8000购车补贴+金融/选装二选一+置换至高25000（含国补2万）；9月官方页未更新 [未确认]",
+      "landed_cost": "21.0-21.9万（含购置税0.91万+保险0.6万）",
+      "scores": {"efficiency": 8.5, "powertrain": 8.5, "chassis": 8.5, "safety": 8.0, "adss": 8.0, "cockpit": 8.5, "design": 7.5, "engineering": 7.5, "reliability": 7.5}
+    }
+  },
+  "score_summary": {
+    "A_product": "约80（区间78-82，置信度中）",
+    "B_product": "约82（区间80-84，置信度中）",
+    "interpretation": "区间重叠，实质平手偏G7"
+  },
+  "price_gap": {"raw": 34000, "note": "B 比 A 便宜约3.4万；含权益后实际差约3.3-4万"},
+  "premium_analysis": {
+    "真价值": ["四驱515kW（动力+236%/冰雪脱困）", "通过性（方盒子+12地形+高底盘）", "安全实测背书（C-IASI全优 vs 无成绩）", "售后体系（比亚迪网点广度，轻微）"],
+    "价值有限": ["电池+25kWh（续航反而短：675 vs 702）", "闪充9min vs 12min（差距小）", "云辇C vs G7 DCC+AI底盘（接近打平）"],
+    "反向下": ["智驾（G7 XNGP城区标配）", "座舱（G7 AR-HUD/四座按摩/降噪全面领先）"]
+  },
+  "tco_3y": {"A": "15-16.5万", "B": "12-13.5万", "note": "B 3年约省2.5-3.5万（能耗+购车价差主导）；±5%残值→±1万波动；两车残值均属模型估算（上市<16个月）"},
+  "scenario": {
+    "city": "B", "highway": "B", "family": "视需求（平手偏B）", "winter_ice": "A", "camping": "A",
+    "charging_weak": "B微胜", "adass_demand": "B", "comfort": "B", "driving_joy": "B", "hold_5y_plus": "暂无法判断"
+  },
+  "winners": {"product": "B微胜", "price": "B胜", "longterm": "B微胜", "city": "B", "tough": "A", "smart": "B"},
+  "final_verdict": {
+    "type": "看需求 · 默认推荐B",
+    "why": ["B 更便宜约3.4万", "B 能耗更低（13.2-15 vs 17.2度）", "B 智驾更强（XNGP城区标配免费）", "B 座舱更好（AR-HUD/四座按摩/降噪）"],
+    "pick_A_when": ["四驱刚需", "冬季冰雪/雨雪", "露营烂路", "更看重安全实测（C-IASI全优）"],
+    "wait_when": ["G7 9月权益未明朗", "第二代VLA未确认送到Max版", "方程S上市可能冲击钛7价格带"]
+  },
+  "evidence_gaps": ["G7 无中国碰撞成绩", "G7 9月权益未确认", "双方无同场智驾/底盘实测", "两车残值均无法验证", "G7 整备质量未获取"],
+  "data_quality": "中等偏上（A车证据链完整度>B车）",
+  "caveat": "结论基于2026-09-04信息。若G7安全成绩公开后表现不佳或9月权益大幅缩水，判断需修正。"
+}
